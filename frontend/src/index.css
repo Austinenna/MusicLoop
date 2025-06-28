@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  /* 按钮样式 */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  }
+  
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+  }
+  
+  /* 输入框样式 */
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  /* 音频进度条样式 */
+  .audio-progress {
+    @apply w-full h-2 bg-gray-200 rounded-full overflow-hidden cursor-pointer;
+  }
+  
+  .audio-progress-bar {
+    @apply h-full bg-gradient-to-r from-primary-500 to-secondary-500 transition-all duration-100;
+  }
+  
+  /* 时间轴样式 */
+  .timeline {
+    @apply relative w-full h-16 bg-gray-100 rounded-lg overflow-hidden;
+  }
+  
+  .timeline-segment {
+    @apply absolute top-0 h-full bg-primary-200 border-2 border-primary-400 rounded opacity-70;
+  }
+  
+  .timeline-handle {
+    @apply absolute top-0 w-2 h-full bg-primary-600 cursor-ew-resize;
+  }
+}
+
+@layer utilities {
+  /* 自定义工具类 */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass {
+    @apply bg-white bg-opacity-80 backdrop-blur-sm;
+  }
+}
+
+/* 音频元素隐藏 */
+audio {
+  display: none;
+}
+
+/* 拖拽区域样式 */
+.drag-area {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center transition-colors duration-200;
+}
+
+.drag-area.drag-over {
+  @apply border-primary-500 bg-primary-50;
+}
+
+/* 响应式隐藏滚动条 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 动画效果 */
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+}
+
+.wave-animation {
+  animation: wave 1s ease-in-out infinite;
+}
